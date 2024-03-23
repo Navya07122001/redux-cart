@@ -1,3 +1,16 @@
+
+
+/* Your custom styles go here */
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -28,11 +41,33 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbgc {
+  background: #c14e8b;
+}
+.home{
+/* background:linear-gradient(to right,#dbe6f6,#c5796d); */
+
+}
+.borderstyle{
+  border-radius: 25px;
+ border-radius: 1px solid black;
+  padding: 20px;
+  width: 500px;
+  height: 550px;
+
+}
+.badgestyle {
+  color: #ece9f0;
+  font-size: 1.5rem;
+}
+.heading{
+  font-size:30px;
+}
+.itemcard{
+   width: '18rem';
+   border:"none";  
+
+}
+.itemcard:hover{
+  box-shadow: #282c34;
 }

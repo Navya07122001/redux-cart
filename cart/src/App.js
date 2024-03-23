@@ -1,24 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Header from './Components/Header';
+import { useEffect } from 'react';
+import {Routes,Route} from "react-router-dom";
+import Cardsdetails from './Components/Cardsdetails';
+import Cards from './Components/Cards';
+import WebFont from 'webfontloader';
+import { ThemeProvider } from '@mui/material';
+import {createTheme} from '@mui/material';
 function App() {
+  const theme=createTheme({
+    typography:{
+    fontFamily:'Chilanka'
+    }
+  })
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Droid Sans', 'Chilanka']
+      }
+    });
+   }, []);
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Header/>
+      <Routes>
+        <Route path="/" element={<Cards/>}></Route>
+        <Route path='/cart/:id' element={<Cardsdetails/>}/>
+
+        
+      </Routes>
+    
+
     </div>
+    </ThemeProvider>
   );
 }
 
